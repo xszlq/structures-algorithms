@@ -48,8 +48,8 @@ class LinkedList{
 
     display(){
         let curNode = this.head;
-        while (curNode !== null){
-            console.log(curNode.element)
+        while (curNode.next !== null){
+            console.log(curNode.next.element)
             curNode = curNode.next;
         }
     }
