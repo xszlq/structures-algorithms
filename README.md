@@ -5,3 +5,6 @@
 ### stack（栈）
 
 ### queue（队列）
+
+### Dictionary（字典）
+
