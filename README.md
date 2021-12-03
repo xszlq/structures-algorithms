@@ -21,4 +21,12 @@
 循环脸变和单向链表类似，只是head.next指向head自己，在遍历自己的时候要修改遍历条件，这里就不实现了
 
 ### Dictionary（字典）
+js中的对象基于字典设计
 
+### HashTable（散列）
+目前还没看到散列的使用场景
+
+### Set(集合)
+实例方法有add、remove、size、union、difference、subset、intersect
+
+### 二叉树和二叉树查找（BST）
