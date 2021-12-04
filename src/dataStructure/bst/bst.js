@@ -10,10 +10,12 @@ class Node {
   }
 }
 
+// 二叉查找树
 class BST {
   constructor (){
     this.root = null;
   }
+  // 插入
   insert(data){
     let newNode = new Node(data, null, null);
 
@@ -44,6 +46,7 @@ class BST {
       }
     }
   }
+  // 中序
   inOrder(node){
     if(node !== null){
       this.inOrder(node.left);
@@ -51,7 +54,7 @@ class BST {
       this.inOrder(node.right);
     }
   }
-
+  // 先序
   preOrder(node){
     if(node !== null){
       console.log(' ', node.data)
@@ -59,7 +62,7 @@ class BST {
       this.preOrder(node.right);
     }
   }
-
+  // 后序
   postOrder(node){
     if(node !== null){
       console.log(' ', node.data)
@@ -67,6 +70,36 @@ class BST {
       this.postOrder(node.right);
     }
   }
+
+  // 查找最小值
+  getMin(){
+    let curNode = this.root;
+    while (curNode.left !== null){
+      curNode = curNode.left;
+    }
+    return curNode.data;
+  }
+  // 查找最大值
+  getMax(){
+    let curNode = this.root;
+    while (curNode.right !== null){
+      curNode = curNode.right;
+    }
+    return curNode.data;
+  }
+  // 查找节点
+  find(data){
+    let curNode = this.root;
+
+    while (curNode !== null){
+      if(curNode.data === data) return curNode;
+
+      curNode = curNode.data < data ? curNode.right : curNode.left
+    }
+
+    return null;
+  }
+  // 删除节点 todo
 }
 
 let ins = new BST();
@@ -76,3 +109,8 @@ ins.preOrder(ins.root);
 console.log('xxxxxxxxxx')
 
 ins.postOrder(ins.root);
+
+console.log(ins.getMin())
+console.log(ins.getMax())
+
+console.log(ins.find(8));
