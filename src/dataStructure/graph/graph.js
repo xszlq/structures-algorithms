@@ -13,6 +13,7 @@ class Graph{
       // this.adj[i].push('')
     }
 
+    this.visitedList = new Array(v).fill(false);
   }
 
   addEdge(v, w){
@@ -32,6 +33,21 @@ class Graph{
       }
     }
   }
+  // 深度优先遍历
+  deepFirst(index){
+    this.visitedList[index] = true;
+
+    if(this.adj[index] !== undefined){
+      console.log(`visit ${index}`)
+    }
+
+    for(let i=0; i<this.adj[index].length; i++){
+      let vertice = this.adj[index][i];
+      if(!this.visitedList[vertice]){
+        this.deepFirst(vertice);
+      }
+    }
+  }
 }
 
 let graph1 = new Graph(5);
@@ -41,3 +57,5 @@ graph1.addEdge(1, 3)
 graph1.addEdge(2, 4)
 
 graph1.showGraph();
+
+graph1.deepFirst(0);
