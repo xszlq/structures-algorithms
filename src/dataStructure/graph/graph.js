@@ -48,6 +48,25 @@ class Graph{
       }
     }
   }
+  // 广度优先
+  breadthFirst(index){
+    this.visitedList[index] = true;
+    let queue = [];
+    queue.push(index);
+    while(queue.length>0){
+      let v = queue.shift();
+      this.visitedList[v] = true;
+
+      console.log('visited vertice ', v);
+      // 遍历当前顶点
+      for(let i=0; i<this.adj[v].length; i++){
+        // 未访问过
+        if(!this.visitedList[this.adj[v][i]]){
+          queue.push(this.adj[v][i]);
+        }
+      }
+    }
+  }
 }
 
 let graph1 = new Graph(5);
@@ -58,4 +77,5 @@ graph1.addEdge(2, 4)
 
 graph1.showGraph();
 
-graph1.deepFirst(0);
+// graph1.deepFirst(0);
+graph1.breadthFirst(0);
