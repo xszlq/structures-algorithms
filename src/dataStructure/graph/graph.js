@@ -10,7 +10,7 @@ class Graph{
     for(let i=0; i<v; i++){
       this.adj[i] = [];
       // 初始一个空字符串
-      this.adj[i].push('')
+      // this.adj[i].push('')
     }
 
   }
@@ -24,14 +24,13 @@ class Graph{
 
   showGraph(){
     for(let i=0; i<this.vertices; i++){
-      console.log(`print ${i}:`)
 
       for(let j=0; j<this.vertices; j++){
-        console.log(this.adj[j])
+        if(this.adj[i][j] !== undefined){
+          console.log(this.adj[i][j])
+        }
       }
     }
-
-    console.log(this.adj);
   }
 }
 
