@@ -5,7 +5,7 @@ function pullCode(){
   exec('git pull', function(err, stdout, stderr){
     if(err){
       console.log(err);
-      pushCode();
+      pullCode();
     }
     console.log(stdout, stderr)
   })
