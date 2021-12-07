@@ -21,4 +21,16 @@
 循环脸变和单向链表类似，只是head.next指向head自己，在遍历自己的时候要修改遍历条件，这里就不实现了
 
 ### Dictionary（字典）
+js中的对象基于字典设计
 
+### HashTable（散列）
+目前还没看到散列的使用场景
+
+### Set(集合)
+实例方法有add、remove、size、union、difference、subset、intersect
+
+### 二叉树和二叉树查找（BST）
+二叉查找树实例方法：insert inOrder:中序遍历 getMin getMax find
+
+### Graph(图)
+图的简单实现，构造函数接受入参顶点数。用一个二维数组来存储每个顶点链接的顶点，两个顶点连接成一条边。
