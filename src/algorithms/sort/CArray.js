@@ -49,10 +49,30 @@ class CArray{
             }
         }
     }
+    // 选择排序
+    selectionSort(){
+        let arrLen = this.dataStore.length;
+        let arr = this.dataStore;
+
+        for(let outer=0; outer<arrLen-1; outer++){
+            // 默认是当前元素
+            let minIndex = outer;
+            for(let inner = outer+1; inner<arrLen; inner++){
+                if(arr[minIndex] > arr[inner]){
+                    minIndex = inner;
+                }
+            }
+
+            let element = arr[minIndex];
+            arr.splice(minIndex, 1);
+            arr.splice(outer, 0, element)
+        }
+    }
 }
 
 let nums = new CArray(10);
 nums.setData();
-nums.bubbleSort();
+// nums.bubbleSort();
+nums.selectionSort();
 
 console.log(nums.dataStore);
