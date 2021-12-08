@@ -68,11 +68,34 @@ class CArray{
             arr.splice(outer, 0, element)
         }
     }
+    // 插入排序
+    insertSort(){
+        let arrLen = this.dataStore.length;
+        let arr = this.dataStore;
+
+        let newArr = [arr[0]];
+
+        for(let outer=1; outer<arr.length; i++){
+            let element = arr[outer];
+
+            for(let inner=newArr.length-1; inner>0; inner--){
+                if(newArr[inner] <= element){
+                    newArr.push(element);
+                    break;
+                }else{
+                    if(newArr[inner]>=element){
+                        newArr.splice(inner, 0, element);
+                    }
+                }
+            }
+        }
+    }
 }
 
 let nums = new CArray(10);
 nums.setData();
 // nums.bubbleSort();
-nums.selectionSort();
+// nums.selectionSort();
+nums.insertSort();
 
 console.log(nums.dataStore);
