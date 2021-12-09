@@ -89,6 +89,30 @@ let nums = new CArray(10);
 nums.setData();
 // nums.bubbleSort();
 // nums.selectionSort();
-nums.insertSort();
+// nums.insertSort();
 
 console.log(nums.dataStore);
+let count = 0;
+
+// 快速排序
+function quickSort(arr){
+    count++;
+    if(arr.length === 0) return [];
+
+    let judgeNum = arr[0];
+    let lesser = [];
+    let grater = [];
+
+
+    for(let i=1; i<arr.length; i++){
+        if(arr[i]>judgeNum){
+            grater.push(arr[i])
+        }else{
+            lesser.push(arr[i])
+        }
+    }
+    return quickSort(lesser).concat(judgeNum, quickSort(grater))
+}
+
+console.log(quickSort(nums.dataStore))
+console.log(count)
