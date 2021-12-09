@@ -70,23 +70,16 @@ class CArray{
     }
     // 插入排序
     insertSort(){
-        let arrLen = this.dataStore.length;
         let arr = this.dataStore;
 
-        let newArr = [arr[0]];
+        for(let outer=1; outer<arr.length; outer++){
+            let compareIndex = outer;
 
-        for(let outer=1; outer<arr.length; i++){
-            let element = arr[outer];
-
-            for(let inner=newArr.length-1; inner>0; inner--){
-                if(newArr[inner] <= element){
-                    newArr.push(element);
-                    break;
-                }else{
-                    if(newArr[inner]>=element){
-                        newArr.splice(inner, 0, element);
-                    }
-                }
+            for(let inner=outer-1; inner>=0; inner--){
+               if(arr[inner]>arr[compareIndex]){
+                   this.swap(arr, compareIndex, inner);
+                   compareIndex = inner;
+               }
             }
         }
     }
