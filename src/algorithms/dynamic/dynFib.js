@@ -25,7 +25,7 @@ function recuFib(n){
   return recuFib(n-1) + recuFib(n-2)
 }
 
-console.log(recuFib(100))
-// console.timeEnd('recuFib')
+console.log(recuFib(30))
+console.timeEnd('recuFib')
 //  dynFib(100)
 // console.timeEnd('dynFib')
