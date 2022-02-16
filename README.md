@@ -26,6 +26,12 @@ js中的对象基于字典设计
 ### HashTable（散列）
 目前还没看到散列的使用场景
 
+#### leetcode
+- 1.isAnagram 
+- 快乐数
+
+
+
 ### Set(集合)
 实例方法有add、remove、size、union、difference、subset、intersect
 
@@ -56,7 +62,5 @@ CArray(数组测试平台类)，排序算法都基于这个数组生成类来做
 #### 贪心算法
 - 找零问题
 
-
 ## leetcode
-### 简单
-
+基于这篇文章来刷：https://programmercarl.com/0202.%E5%BF%AB%E4%B9%90%E6%95%B0.html
