@@ -118,3 +118,5 @@ function backtracking(param){
 - 反转二叉树 invertTree
 - 最小深度 https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/
 
+### 双指针法 dataStructure/doublePointer
+- 移除元素（removeElement）
