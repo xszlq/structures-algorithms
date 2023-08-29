@@ -117,6 +117,7 @@ return
 ``
 
 - combine
+- combine2 (找出和为指定值的组合)
 
 ## leetcode
 
