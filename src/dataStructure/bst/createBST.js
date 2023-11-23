@@ -4,7 +4,7 @@ function TreeNode(val, left, right) {
   this.right = right === undefined ? null : right;
 }
 
-class Tree {
+class BST {
   constructor() {}
 
   insert(v) {
@@ -49,10 +49,12 @@ class Tree {
   }
 }
 
-let bst = new Tree();
+// let bst = new Tree();
 
-[1, 2, 3, null, 5].forEach((i) => {
-  bst.insert(i);
-});
+// [1, 2, 3, null, 5].forEach((i) => {
+//   bst.insert(i);
+// });
 
-bst.inOrder(bst.root);
+// bst.inOrder(bst.root);
+
+module.exports.BST = BST;
