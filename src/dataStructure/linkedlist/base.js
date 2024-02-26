@@ -1,6 +1,6 @@
 // 判断一个链表是否为循环链表
 
-function Node(value){
+function Node(value) {
   this.value = value;
   this.next = null;
 }
@@ -12,16 +12,43 @@ head.next = node1;
 node1.next = node2;
 // node2.next = head;
 
-function testIsCircle(list){
+function testIsCircle(list) {
   let cur = list;
   let headValue = list.value;
-  while(cur.next){
+  while (cur.next) {
     cur = cur.next;
-    if(cur.value === headValue){
+    if (cur.value === headValue) {
       return true;
     }
   }
-  return false
+  return false;
 }
 
-console.log(testIsCircle(head));
+// 数组转链表
+function arrToList(arr) {
+  let head, cur;
+
+  arr.forEach((i) => {
+    if (!head) {
+      head = new Node(i);
+      cur = head;
+    } else {
+      cur.next = new Node(i);
+
+      cur = cur.next;
+    }
+  });
+
+  return head;
+}
+
+function showList(head) {
+  let cur = head;
+
+  while (cur) {
+    console.log(cur.value);
+    cur = cur.next;
+  }
+}
+
+let list1 = arrToList([1, 2, 3, 4]);
